@@ -2,12 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <ImageView
-        android:id="@+id/imgaViewUsario"
+    android:layout_height="120pt">
+    <RelativeLayout
+        android:gravity="center"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight=".3"></ImageView>
+        android:layout_height="60pt"
+        android:layout_weight=".3">
+        <ImageView
+            android:id="@+id/imgaViewUsario"
+            android:maxWidth="30pt"
+            android:maxHeight="30pt"
+            android:layout_width="30pt"
+            android:layout_height="30pt"></ImageView>
+    </RelativeLayout>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="0dp"

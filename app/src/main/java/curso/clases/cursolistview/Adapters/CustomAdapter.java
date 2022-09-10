@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -64,6 +65,19 @@ public class CustomAdapter extends BaseAdapter {
         sexo.setText(usuarios.getSexo());
 
         imageViewUsuario.setImageResource(usuarios.getImagen());
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(contexto.getApplicationContext(),usuarios.getNombre(),Toast.LENGTH_LONG).show();
+            }
+        });
+        imageViewUsuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(contexto.getApplicationContext(),usuarios.getNombre(),Toast.LENGTH_LONG).show();
+            }
+        });
 
         return view;
     }

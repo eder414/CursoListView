@@ -14,7 +14,7 @@ import java.util.List;
 import curso.clases.cursolistview.Models.Usuarios;
 import curso.clases.cursolistview.R;
 
-public class CustomAdapter extends BaseAdapter {
+public class CustomAdapter extends BaseAdapter implements View.OnClickListener{
     /*atributos de nuestro ListView*/
     ImageView imageViewUsuario;
     TextView nombre,correo,edad,sexo;
@@ -66,7 +66,7 @@ public class CustomAdapter extends BaseAdapter {
 
         imageViewUsuario.setImageResource(usuarios.getImagen());
 
-        view.setOnClickListener(new View.OnClickListener() {
+        /*view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(contexto.getApplicationContext(),usuarios.getNombre(),Toast.LENGTH_LONG).show();
@@ -77,8 +77,26 @@ public class CustomAdapter extends BaseAdapter {
             public void onClick(View view) {
                 Toast.makeText(contexto.getApplicationContext(),usuarios.getNombre(),Toast.LENGTH_LONG).show();
             }
-        });
+        });*/
+        imageViewUsuario.setOnClickListener(this);
+        correo.setOnClickListener(this);
+        nombre.setOnClickListener(this);
 
         return view;
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.imgaViewUsario:
+                Toast.makeText(contexto.getApplicationContext(),"Image",Toast.LENGTH_LONG).show();
+                break;
+            case R.id.textViewNombre:
+                Toast.makeText(contexto.getApplicationContext(),"Nombre",Toast.LENGTH_LONG).show();
+                break;
+            default:
+                Toast.makeText(contexto.getApplicationContext(),"default",Toast.LENGTH_LONG).show();
+                break;
+        }
     }
 }
